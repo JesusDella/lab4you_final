@@ -1,141 +1,82 @@
-/* Estilos Generales */
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
+    font-family: 'Times New Roman', serif;
+    background-color: #f8f8f8;
+    color: #333;
     margin: 0;
-    padding: 0;
-}
-main {
-    max-width: 800px;
-    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
     padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Estilos de Secciones y Tablas */
-section {
-    margin-bottom: 20px;
+.contenido {
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 210mm;
 }
+
 table {
     width: 100%;
     border-collapse: collapse;
-    table-layout: fixed; /* Asegura que la tabla no se expanda más allá del contenedor */
-    margin-top: 10px;
 }
+
 th, td {
     border: 1px solid #ddd;
-    padding: 8px;
     text-align: left;
-    word-wrap: break-word; /* Asegura que el texto no se salga de la celda */
-}
-th {
-    background-color: #4CAF50;
-    color: white;
-}
-caption {
-    font-size: 1.2em;
-    margin-bottom: 10px;
-}
-
-/* Estilos de Botones y Campos de Texto */
-input[type="text"] {
-    width: calc(100% - 16px); /* Resta el padding y el borde */
     padding: 8px;
-    margin-bottom: 10px;
-    box-sizing: border-box; /* Incluye el padding y el borde en el ancho total */
-    border-radius: 4px;
-    border: 1px solid #ddd;
 }
 
-.btn {
+.consentimiento p {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+#generarPDF {
     background-color: #4CAF50;
     color: white;
+    padding: 10px 20px;
     border: none;
+    border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s ease;
 }
 
-.btn:hover {
+#generarPDF:hover {
     background-color: #45a049;
 }
 
-.imprimirDocumento {
-    background-color: #008CBA;
-}
-
-.imprimirDocumento:hover {
-    background-color: #005A70;
-}
-
-/* Media query para impresión */
-@media print {
-    body {
-        background-color: #fff;
-        box-shadow: none;
-    }
-    main {
-        max-width: 100%;
-        margin: 0;
-        padding: 0;
-        box-shadow: none;
-    }
-    .btn, .campo-input {
-        border: 1px solid #000; /* Mejor visibilidad en la impresión */
-    }
-    .btn {
-        display: none; /* Ocultar botones en la impresión */
-    }
-}
-
-/* Estilos personalizados para el calendario */
-.ui-datepicker {
-    width: 40%; /* Establece el ancho del calendario a una cuarta parte del ancho de su contenedor */
-    max-width: 200px; /* Opcional: un máximo para el ancho si es necesario */
-    background-color: #fff;
-    border: 1px solid #ddd;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    padding: 10px;
-    position: absolute;
-    top: 0; /* Ajusta según sea necesario */
-    left: 0; /* Alineado a la izquierda */
-    display: none; /* Ocultar hasta que se enfoque el campo de entrada */
-    z-index: 1000;
-}
-
-/* Contenedor de la hoja principal */
-main {
-    position: relative; /* Hace que la posición absoluta del calendario sea relativa a este elemento */
-    max-width: 800px; /* Ejemplo de ancho establecido; ajusta según sea necesario */
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Mostrar el calendario cuando el campo de entrada tiene el foco */
-input[type="text"]:focus + .ui-datepicker {
-    display: block;
-}
-
-
-/* Estilo para el formulario*/
-#prestamoForm {
-    margin: 20px;
-    padding: 20px;
-    border: 1px solid #ddd;
-}
-
-#prestamoForm select {
+input[type="text"], select {
     width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
+    padding: 8px;
+    margin: 6px 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
 
-#prestamoForm button {
-    padding: 10px 20px;
-    background-color: blue;
-    color: white;
-    border: none;
-    cursor: pointer;
+.reactivos, .equipos {
+    background-color: #e7f4e4;
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+@media only screen and (max-width: 600px) {
+    body {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contenido {
+        box-shadow: none;
+        width: auto;
+        padding: 10px;
+    }
+}
+
+.boton:focus, input:focus, select:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #218838;
 }
